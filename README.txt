@@ -4,7 +4,7 @@ Creates a .SQL file containing T-SQL scripts to recreate all SQL Server Agent Jo
 
 ## Installation
 
-MVCTSQLJobScripter.exe is a command-line program that relies on Microsoft SQL Server Management Objects (SMO), and .Net 3.5
+MVCTSQLJobScripter.exe is a command-line program that relies on Microsoft SQL Server Management Objects (SMO), and .Net 4.8
 
 ## Usage
 
@@ -26,7 +26,7 @@ C:>  MVCTSQLJobScripter /server:<sql-server-name> /outfile:<path-to-output-sql-f
 
 ## Credits
 
-Written By Max Vernon
+Written By Hannah Vernon
 
 ## License
 

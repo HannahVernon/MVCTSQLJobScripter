@@ -31,13 +31,14 @@ Module Main
 
             smoServer = New Microsoft.SqlServer.Management.Smo.Server(smoConnectionSettings)
             JobList = smoServer.JobServer.Jobs
-            Dim sqlOptions As Microsoft.SqlServer.Management.Smo.ScriptingOptions
-            sqlOptions = New Microsoft.SqlServer.Management.Smo.ScriptingOptions
-            sqlOptions.AllowSystemObjects = True
-            sqlOptions.AnsiFile = True
-            sqlOptions.AnsiPadding = True
-            sqlOptions.FileName = sFileName
-            sqlOptions.AppendToFile = False
+            Dim sqlOptions As New Microsoft.SqlServer.Management.Smo.ScriptingOptions With
+            {
+                .AllowSystemObjects = True,
+                .AnsiFile = True,
+                .AnsiPadding = True,
+                .FileName = sFileName,
+                .AppendToFile = False
+            }
             For Each Job In JobList
                 Job.Script(sqlOptions)
                 sqlOptions.AppendToFile = True
